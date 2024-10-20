@@ -8,7 +8,8 @@ import LogoutBtn from './LogoutBtn';
 import Profile from '../../components/profile';
 
 function Header() {
-    const authStatus = useSelector((state) => state.auth.status);
+    // const authStatus = useSelector((state) => state.auth.status);
+    const {authStatus,$id} = useSelector((state) => state.auth);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     const navItems = useMemo(() => [
@@ -84,7 +85,8 @@ function Header() {
                                         <LogoutBtn />
                                     </li>
                                     <div className='w-20 ml-3'>
-                                        <Link to="/dashboard" aria-label="Dashboard">
+                                        {/* <Link to="/dashboard" aria-label="Dashboard"> */}
+                                        <Link to={`/dashboard/${$id}`} aria-label="Dashboard">
                                             <Profile />
                                         </Link>
                                     </div>

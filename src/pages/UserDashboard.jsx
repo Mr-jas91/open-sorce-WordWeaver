@@ -5,7 +5,6 @@ import { useParams } from "react-router-dom";
 
 
 
-
 const UserDashboard = () => {
   const [userData, setUserData] = useState(null);
   console.log("UserDashboard");
